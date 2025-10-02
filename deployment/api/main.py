@@ -3,6 +3,7 @@ import sqlite3
 import bcrypt
 from deployment.api.add import add_patient
 from deployment.api.remove_pat import remove_pat_info
+from deployment.api.display_pat import pat_display  
 # ---------- CSS for dashboard ----------
 st.markdown("""
 <style>
@@ -299,18 +300,16 @@ elif st.session_state.page == "dashboard" and st.session_state.logged_in:
 
     elif st.session_state.subpage == "Remove Patient":
         st.header("➖ Remove Patient")
-        id = st.text_input("Enter USN to Remove")
-        if st.button("Remove Student"):
+        id = st.text_input("Enter ID to Remove")
+        if st.button("Remove Patients"):
             if id.strip() == "":
-                st.warning("Please enter a USN!")
+                st.warning("Please enter a ID!")
             else:
                 remove_pat_info(id)
 
     elif st.session_state.subpage == "Patient Details":
         st.header("📋 Patient Details")
-        pid = st.text_input("Enter Patient ID")
-        if st.button("Search"):
-            st.info(f"Showing details for Patient ID: {pid}")
+        pat_display()
 
     elif st.session_state.subpage == "Add Camera URL":
         st.header("📷 Add Camera URL")

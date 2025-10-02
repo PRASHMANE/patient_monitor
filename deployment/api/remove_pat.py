@@ -49,8 +49,8 @@ def remove_pat_info(id):
         else:
             #st.write("Folder not found.")
             pass
-        st.write(f"✅ Removed all details and associated image for USN: {id}")
+        st.write(f"✅ Removed all details and associated image for ID: {id}")
 
     else:
-        st.write(f"No entry found for USN: {id}")
+        st.write(f"No entry found for ID: {id}")
 
