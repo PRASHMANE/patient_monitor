@@ -8,3 +8,4 @@ step 3:
     install all requirements based on the version
 
     pip install streamlit==1.44.1
+    pip install pyyaml==6.0.1

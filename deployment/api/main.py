@@ -1,7 +1,7 @@
 import streamlit as st
 import sqlite3
 import bcrypt
-
+from deployment.api.add import add_patient
 # ---------- CSS for dashboard ----------
 st.markdown("""
 <style>
@@ -294,11 +294,7 @@ elif st.session_state.page == "dashboard" and st.session_state.logged_in:
 
     elif st.session_state.subpage == "Add Patient":
         st.header("➕ Add Patient")
-        name = st.text_input("Patient Name")
-        age = st.number_input("Age", 0, 120)
-        disease = st.text_area("Disease / Symptoms")
-        if st.button("Save Patient"):
-            st.success(f"Patient {name} added!")
+        add_patient()
 
     elif st.session_state.subpage == "Remove Patient":
         st.header("➖ Remove Patient")
