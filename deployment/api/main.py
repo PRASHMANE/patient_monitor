@@ -5,6 +5,9 @@ from deployment.api.add import add_patient
 from deployment.api.remove_pat import remove_pat_info
 from deployment.api.display_pat import pat_display  
 from deployment.api.live_cam import live_cam
+from deployment.api.moniter import moniter
+from src.models.model import track
+from deployment.api.home import home
 # ---------- CSS for dashboard ----------
 st.markdown("""
 <style>
@@ -286,8 +289,8 @@ elif st.session_state.page == "dashboard" and st.session_state.logged_in:
 
     if st.session_state.subpage == "Home":
         st.header("Welcome")
-        st.write("Use the sidebar to navigate between modules.")
-
+        #st.write("Use the sidebar to navigate between modules.")
+        home()
         # Logout button
         if st.button("Logout"):
             st.session_state.logged_in = False
@@ -309,11 +312,11 @@ elif st.session_state.page == "dashboard" and st.session_state.logged_in:
                 remove_pat_info(id)
 
     elif st.session_state.subpage == "Patient Details":
-        st.header("📋 Patient Details")
+        #st.header("📋 Patient Details")
         pat_display()
 
     elif st.session_state.subpage == "Add Camera URL":
-        st.header("📷 Add Camera URL")
+        #st.header("📷 Add Camera URL")
         import streamlit as st
         import requests
         import numpy as np
@@ -360,13 +363,7 @@ elif st.session_state.page == "dashboard" and st.session_state.logged_in:
 
 
     elif st.session_state.subpage == "Patient Monitor":
-        st.header("❤️ Patient Monitor")
-        heart_rate = st.slider("Heart Rate (BPM)", 40, 180, 75)
-        oxygen = st.slider("Oxygen (%)", 70, 100, 96)
-        temp = st.slider("Temperature (°C)", 30, 45, 37)
-
-        st.metric("Heart Rate", f"{heart_rate} BPM")
-        st.metric("Oxygen Level", f"{oxygen}%")
-        st.metric("Temperature", f"{temp}°C")
+        #moniter()
+        track()
 
    

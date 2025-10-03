@@ -18,7 +18,7 @@ def add_patient():
     if "id" not in st.session_state:
         st.session_state.id = ""
 
-    st.title(" patient Information System")
+    #st.title(" patient Information System")
 
     # One global USN used across all pages
     st.text_input("id (used for all sections)", key="id", help="This id will be used when saving details and photos")
