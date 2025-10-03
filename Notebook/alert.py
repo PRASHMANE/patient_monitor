@@ -36,10 +36,10 @@ def send_email_alert(subject, message, to_email, from_email, from_password):
 # ------------------------------
 if __name__ == "__main__":
     subject = "Patient Alert: Unusual Activity Detected"
-    message = "The system detected unusual activity for patient John Doe. Please check immediately."
+    message = "The system detected unusual activity for patient. Please check immediately."
     
-    to_email = "recipient@example.com"
-    from_email = "yourgmail@gmail.com"
-    from_password = "your_app_password"  # Use App Password in Gmail
+    to_email = "ganasreeajay@gmail.com"
+    from_email = "prashanthvprashanthv46@gmail.com"
+    from_password = "spqbsdbnwvrgubdo"  # Use App Password in Gmail
     
     send_email_alert(subject, message, to_email, from_email, from_password)
