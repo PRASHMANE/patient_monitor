@@ -9,3 +9,5 @@ step 3:
 
     pip install streamlit==1.44.1
     pip install pyyaml==6.0.1
+    pip install streamlit-autorefresh
+
